@@ -1,6 +1,3 @@
-module.exports=function(althea){
-    althea.addPagemodule('/ipa',pagemodule)
-}
 function pagemodule(env){
     if(!env.althea.allowOrigin(env.envVars,env.request.headers.origin))
         return 403
@@ -21,4 +18,7 @@ function get(env){
             env.request.headers['x-forwarded-for']||
             env.request.connection.remoteAddress
     }
+}
+export default althea=>{
+    althea.addPagemodule('/ipa',pagemodule)
 }
