@@ -19,6 +19,11 @@ function get(env){
             env.request.connection.remoteAddress
     }
 }
-export default althea=>{
+function Plugin(althea){
     althea.addPagemodule('/ipa',pagemodule)
 }
+Plugin.prototype.end=function(){
+}
+Plugin.prototype.shutdownEnd=function(){
+}
+export default Plugin
